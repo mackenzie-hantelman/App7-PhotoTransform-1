@@ -27,7 +27,7 @@
   To blue-scale an image taken from an iPhone, or uploaded from another device. 
  
   Known Issues:
-  blah, blah, blah, blah
+  You have to refresh to add another picture. 
 -->
 
  <head>
@@ -103,20 +103,18 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
     
-var imageData = context.getImageData(0, 0, 600, 500);
-				var data = imageData.data;
-
-				// Loop through the pixel data and convert each pixel to grayscale
-				for (var i = 0; i < data.length; i += 4) {
-					var r = data[i];
-					var g = data[i + 1];
-					var b = data[i + 2];
-					data[i] = 0; // Reduce the red value to 0
-					data[i + 1] = 0; // Reduce the green value to 0
-					data[i + 2] = b; // Increase the blue value
+var imageData = context.getImageData(0, 0, 600, 500); //tells where to get the image data from
+				var data = imageData.data; //establishes image data variable to reference later
+				for (var i = 0; i < data.length; i += 4) { //
+					var r = data[i]; //red pixel data
+					var g = data[i + 1]; //green pixel data
+					var b = data[i + 2]; //blue pixel data
+					data[i] = 0; // = 0 elimates red hues
+					data[i + 1] = 0; // eliminates green hues
+					data[i + 2] = b; // show blue hues
 				}
 
-				// Update the canvas with the new grayscale pixel data
+				// changes image on canvas2 to established data above
 				context2.putImageData(imageData, 0, 0);
    
           

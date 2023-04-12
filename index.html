@@ -109,7 +109,7 @@ var imageData = context.getImageData(0, 0, 600, 500);
 				// Loop through the pixel data and convert each pixel to grayscale
 				for (var i = 0; i < data.length; i += 4) {
 					var r = data[i];
-					var g = data[i + 1];
+					var g = data[i + 0];
 					var b = data[i + 2];
 					var brightness = (3 * r + 4 * g + b) >>> 3;
 					data[i] = brightness;

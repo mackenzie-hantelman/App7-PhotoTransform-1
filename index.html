@@ -27,7 +27,7 @@
   To blue-scale an image taken from an iPhone, or uploaded from another device. 
  
   Known Issues:
-  You have to refresh to add another picture. 
+  You have to refresh to add another picture. Picture compresses when taken on iPhone.
 -->
 
  <head>
@@ -140,28 +140,28 @@ var imageData = context.getImageData(0, 0, 600, 500); //tells where to get the i
     <div data-role="header">
     <h1>Primary Colors</h1></div><!-- /header -->
     <div data-role="content">	
-      <h2>Push button to take picture.</h2>
+      <h2>Push button to take picture.</h2><!--Title text on the page-->
       <div>
-        Press green button to create or choose image file:
+        Press green button to create or choose image file: <!--Body text on page-->
         <input type="file" id="fileInput" STYLE="background-color: #A1E19B;">
       </div>
       <div id="messageDisplayArea"></div>
       
-      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--establishes a canvas with a thin border-->
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext("2d");
-        context.font = '20pt Calibri';
-        context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20);
+        var canvas = document.getElementById('myCanvas'); <!--establishes a canvas variable to refer to late for img upload-->
+        var context = canvas.getContext("2d");  <!--provides context for the style of what goes inside the canvas, like text--> 
+        context.font = '20pt Calibri'; <!--size and font of text within canvas-->
+        context.fillStyle = "black"; <!--color of text within canvas-->
+        context.fillText("Original image will go here", 10, 20); <!--actual text and its location within the canas-->
       </script>
      
-     <canvas id="dataCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+     <canvas id="dataCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--establishes a second canvas with a thin border-->
      <script> /* This script initiates the cavas and puts the text on the canvas "dataCanvas" */
-        var canvas2 = document.getElementById('dataCanvas');
-        var context2 = canvas2.getContext("2d");
-        context2.font = '20pt Calibri';
-        context2.fillStyle = "black";
+        var canvas2 = document.getElementById('dataCanvas');  <!--establishes a canvas variable to refer to late for img upload-->
+        var context2 = canvas2.getContext("2d"); <!--provides context for the style of what goes inside the canvas, like text-->
+        context2.font = '20pt Calibri'; <!--size and font of text within canvas-->
+        context2.fillStyle = "black"; <!--actual text and its location within the canas-->
         context2.fillText("Blue image will go here", 10, 20);
       </script>
 
